@@ -1,9 +1,10 @@
 import style from "./entry.module.css";
+import React from "react";
 
 type EntryProp = {
   title: string;
   info?: string;
-  description?: string;
+  description?: string | React.ReactNode;
 };
 
 export default function Entry({ title, info, description }: EntryProp) {
@@ -15,7 +16,9 @@ export default function Entry({ title, info, description }: EntryProp) {
   }
 
   if (description) {
-    descriptionElement = <p className={style.entrydescription}>{description}</p>
+    descriptionElement = (
+      <div className={style.entrydescription}>{description}</div>
+    );
   }
 
   return (
