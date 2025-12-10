@@ -1,10 +1,10 @@
 import style from "./entry.module.css";
-import { ReactNode } from "react";
+import React from "react";
 
 type EntryProp = {
   title: string;
   info?: string;
-  description?: string | ReactNode;
+  description?: string | React.ReactNode;
 };
 
 export default function Entry({ title, info, description }: EntryProp) {
